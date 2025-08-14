@@ -2,41 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Cosmic Space Theme Design System - All colors MUST be HSL. */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Deep Space Background */
+    --background: 220 25% 3%;
+    --foreground: 220 20% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Space UI Elements */
+    --card: 220 30% 8%;
+    --card-foreground: 220 20% 85%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 30% 8%;
+    --popover-foreground: 220 20% 85%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Cosmic Primary - Electric Blue */
+    --primary: 220 100% 60%;
+    --primary-foreground: 220 30% 5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Nebula Secondary - Deep Purple */
+    --secondary: 270 30% 15%;
+    --secondary-foreground: 270 20% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Space Tones */
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 15% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Cosmic Accent - Plasma Pink */
+    --accent: 320 80% 60%;
+    --accent-foreground: 320 30% 5%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Alert/Destructive - Solar Orange */
+    --destructive: 15 90% 55%;
+    --destructive-foreground: 15 30% 5%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Space UI Borders */
+    --border: 220 20% 15%;
+    --input: 220 20% 15%;
+    --ring: 220 100% 60%;
 
-    --radius: 0.5rem;
+    /* Cosmic Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(220 100% 60%), hsl(270 80% 60%), hsl(320 80% 60%));
+    --gradient-nebula: linear-gradient(180deg, hsl(220 25% 3%), hsl(270 30% 8%));
+    --gradient-accretion: linear-gradient(135deg, hsl(35 100% 60%), hsl(15 90% 55%), hsl(5 85% 50%));
+    --gradient-void: radial-gradient(circle at center, transparent 30%, hsl(220 25% 3%) 70%);
+
+    /* Space Shadows and Glows */
+    --shadow-cosmic: 0 0 30px hsl(220 100% 60% / 0.3);
+    --shadow-accretion: 0 0 50px hsl(35 100% 60% / 0.4);
+    --shadow-void: inset 0 0 100px hsl(220 25% 1%);
+
+    /* Animation Timings */
+    --transition-cosmic: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s ease-out;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -55,42 +76,27 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* Deep Space Mode (Always Dark) */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 220 25% 3%;
+    --foreground: 220 20% 90%;
+    --card: 220 30% 8%;
+    --card-foreground: 220 20% 85%;
+    --popover: 220 30% 8%;
+    --popover-foreground: 220 20% 85%;
+    --primary: 220 100% 60%;
+    --primary-foreground: 220 30% 5%;
+    --secondary: 270 30% 15%;
+    --secondary-foreground: 270 20% 85%;
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 320 80% 60%;
+    --accent-foreground: 320 30% 5%;
+    --destructive: 15 90% 55%;
+    --destructive-foreground: 15 30% 5%;
+    --border: 220 20% 15%;
+    --input: 220 20% 15%;
+    --ring: 220 100% 60%;
   }
 }
 
@@ -100,6 +106,93 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+    background: var(--gradient-nebula);
+  }
+
+  /* Cosmic Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-wide;
+  }
+
+  /* Space Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
+
+/* Cosmic Animation Utilities */
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-orbit {
+    animation: orbit 20s linear infinite;
+  }
+
+  .animate-swirl {
+    animation: swirl 8s linear infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes swirl {
+    from { transform: rotate(0deg) scale(1); }
+    to { transform: rotate(360deg) scale(1.05); }
+  }
+
+  /* Gradient Text Effects */
+  .text-cosmic {
+    background: var(--gradient-cosmic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-accretion {
+    background: var(--gradient-accretion);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Cosmic Glow Effects */
+  .glow-cosmic {
+    box-shadow: var(--shadow-cosmic);
+  }
+
+  .glow-accretion {
+    box-shadow: var(--shadow-accretion);
   }
 }
