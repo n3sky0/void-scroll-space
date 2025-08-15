@@ -1,8 +1,7 @@
 import React, { useRef, useMemo } from 'react';
-import { useFrame, useThree } from '@react-three/fiber';
+import { useFrame, useThree, extend } from '@react-three/fiber';
 import { Sphere, shaderMaterial } from '@react-three/drei';
 import * as THREE from 'three';
-import { extend } from '@react-three/fiber';
 
 // Black hole shader material
 const BlackHoleMaterial = shaderMaterial(
@@ -95,13 +94,13 @@ const BlackHoleMaterial = shaderMaterial(
   `
 );
 
+// Extend the material
 extend({ BlackHoleMaterial });
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      blackHoleMaterial: any;
-    }
+// Type declaration for TypeScript
+declare module '@react-three/fiber' {
+  interface ThreeElements {
+    blackHoleMaterial: any;
   }
 }
 
